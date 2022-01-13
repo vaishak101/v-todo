@@ -1,0 +1,47 @@
+.display {
+  height: 100vh;
+  margin-left: 10rem;
+}
+.container {
+  height: 100vh;
+  position: relative;
+}
+.task__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  // height: 0%;
+  height: 90%;
+  border-radius: 3rem;
+  opacity: 0.5;
+  overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: transform 0.5s;
+  padding: 3rem 4rem;
+
+  &--add {
+    border: 5px solid green;
+    background-color: white;
+  }
+  &--all {
+    border: 5px solid blue;
+    background-color: white;
+  }
+  &--edit {
+    border: 5px solid red;
+    background-color: white;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.active {
+  height: 90%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1222;
+}

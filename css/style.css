@@ -1,3 +1,145 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  position: relative;
+}
+
+.u-text-center {
+  text-align: center;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem;
+}
+
+.nav__btn {
+  width: 5.5rem;
+  height: 5.5rem;
+  border-radius: 50%;
+  border: none;
+  font-size: 3rem;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+.form__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  height: 100%;
+}
+.form__label {
+  width: 30%;
+  font-size: 2rem;
+}
+.form__input {
+  width: 70%;
+  font-size: 2rem;
+  border-radius: 50px;
+  padding: 2rem 1rem;
+}
+.form__btn {
+  padding: 1rem 2rem;
+  width: 30%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50px;
+}
+
+.task {
+  background-color: cornsilk;
+  border-radius: 50px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.display {
+  height: 100vh;
+  margin-left: 10rem;
+}
+
+.container {
+  height: 100vh;
+  position: relative;
+}
+
+.task__box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 90%;
+  border-radius: 3rem;
+  opacity: 0.5;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: transform 0.5s;
+  padding: 3rem 4rem;
+}
+.task__box--add {
+  border: 5px solid green;
+  background-color: white;
+}
+.task__box--all {
+  border: 5px solid blue;
+  background-color: white;
+}
+.task__box--edit {
+  border: 5px solid red;
+  background-color: white;
+}
+.task__box::-webkit-scrollbar {
+  display: none;
+}
+
+.active {
+  height: 90%;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1222;
+}
+
+.nav {
+  background-color: lightgoldenrodyellow;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.content {
+  height: 100%;
+}
 
 /*# sourceMappingURL=style.css.map */

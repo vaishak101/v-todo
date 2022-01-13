@@ -8,5 +8,77 @@
     <script async src="js/script.js"></script>
     <title>V-Todo List</title>
   </head>
-  <body></body>
+  <body>
+    <!-- *******************************************************----NAVIGATION----*********************** -->
+    <div class="nav">
+      <button class="nav__btn" data-num="0">
+        <ion-icon
+          name="add-circle-outline"
+          class="nav__btn--icon"
+          data-num="0"
+        ></ion-icon>
+      </button>
+      <button class="nav__btn" data-num="1">
+        <ion-icon
+          name="list-outline"
+          class="nav__btn--icon"
+          data-num="1"
+        ></ion-icon>
+      </button>
+      <button class="nav__btn" data-num="2">
+        <ion-icon
+          name="create-outline"
+          class="nav__btn--icon"
+          data-num="2"
+        ></ion-icon>
+      </button>
+    </div>
+    <!-- *******************************************************----DISPLAY-------*********************** -->
+    <div class="display">
+      <div class="container">
+        <!-- ***************************************************----Add-----------*********************** -->
+        <div class="task__box task__box--add active">
+          <h1 class="u-text-center">Add new task</h1>
+          <div class="content">
+            <form class="form">
+              <div class="form__group">
+                <label for="title__box" class="form__label">TASK</label>
+                <input
+                  type="text"
+                  id="title__box"
+                  class="form__input title"
+                  required
+                  maxlength="50"
+                />
+              </div>
+
+              <div class="form__group">
+                <label for="date__box" class="form__label">Date and Time</label>
+                <input type="date" id="date__box" class="form__input date" />
+              </div>
+              <button type="submit" class="form__btn">Add</button>
+            </form>
+          </div>
+        </div>
+        <!-- ***************************************************----Delete--------*********************** -->
+        <div class="task__box task__box--all">
+          <h1 class="u-text-center u-margin-bottom-medium">All task</h1>
+          <div class="content content--allTask"></div>
+        </div>
+        <!-- ***************************************************----Update--------*********************** -->
+        <div class="task__box task__box--edit">
+          <h1 class="u-text-center u-margin-bottom-medium">Edit your tasks</h1>
+          <div class="content content--Update"></div>
+        </div>
+      </div>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>
