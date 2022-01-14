@@ -19,6 +19,8 @@ const InputDateTime = document.querySelector('.date');
 const addBtn = document.querySelector('.form__btn');
 const allTask = document.querySelector('.content--allTask');
 const updateTask = document.querySelector('.content--Update');
+const taskBoxUP = document.querySelectorAll('.content--up');
+
 class Task {
   constructor(id, title, dateTime) {
     this.id = id;
@@ -92,20 +94,17 @@ class App {
   }
   deleteTask(e) {
     if (e.target.classList.contains('task__delete')) {
-      const test = e.target.getAttribute('data-id');
-      console.log(this.#task);
-      console.log(test);
-
-      const filteredTask = this.#task.filter(item => item.id != test);
+      const getBtnID = e.target.getAttribute('data-id');
+      const filteredTask = this.#task.filter(item => item.id != getBtnID);
       this.#task = filteredTask;
-      console.log(this.#task);
       this.setLocalstorage();
-
+      taskBoxUP.forEach(s => (s.innerHTML = ''));
       this.getLocalstorage();
     } else {
       return;
     }
   }
+  updateTask(e) {}
   resetValue() {
     InputTitle.value = InputDateTime.value = '';
   }
