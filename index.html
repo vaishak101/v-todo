@@ -70,6 +70,38 @@
           <h1 class="u-text-center u-margin-bottom-medium">Edit your tasks</h1>
           <div class="content content--Update content--up"></div>
         </div>
+        <!-- ***************************************************----Modal--------*********************** -->
+        <div class="modal modal--hide">
+          <div class="modal__edit-box">
+            <button class="modal__btn--close">X</button>
+            <form class="form">
+              <div class="form__group">
+                <label for="title__box--modal" class="form__label--modal"
+                  >TASK</label
+                >
+                <input
+                  type="text"
+                  id="title__box--modal"
+                  class="form__input--modal title--modal"
+                  required
+                  maxlength="50"
+                />
+              </div>
+
+              <div class="form__group">
+                <label for="date__box--modal" class="form__label--modal"
+                  >Date and Time</label
+                >
+                <input
+                  type="date"
+                  id="date__box--modal"
+                  class="form__input--modal date--modal"
+                />
+              </div>
+              <button type="button" class="form__btn--modal">Edit</button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
     <script

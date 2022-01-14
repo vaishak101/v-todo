@@ -15,9 +15,6 @@
   height: 90%;
   border-radius: 3rem;
   opacity: 0.5;
-  overflow-y: scroll;
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;
   transform: translate(-50%, -50%) scale(0.5);
   transition: transform 0.5s;
   padding: 3rem 4rem;
@@ -33,10 +30,6 @@
   &--edit {
     border: 5px solid red;
     background-color: white;
-  }
-
-  &::-webkit-scrollbar {
-    display: none;
   }
 }
 .active {

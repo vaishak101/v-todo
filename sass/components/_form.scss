@@ -29,3 +29,34 @@
     border-radius: 50px;
   }
 }
+.form {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 100%;
+  &__group {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+  }
+  &__label--modal {
+    width: 30%;
+    font-size: 2rem;
+  }
+  &__input--modal {
+    width: 70%;
+    font-size: 2rem;
+    border-radius: 50px;
+    padding: 2rem 1rem;
+  }
+  &__btn--modal {
+    padding: 1rem 2rem;
+    width: 30%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 50px;
+  }
+}
