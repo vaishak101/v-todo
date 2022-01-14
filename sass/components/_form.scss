@@ -20,13 +20,11 @@
     font-size: 2rem;
     border-radius: 50px;
     padding: 2rem 1rem;
-  }
-  &__btn {
-    padding: 1rem 2rem;
-    width: 30%;
-    margin: 0 auto;
     border: none;
-    border-radius: 50px;
+    &:focus {
+      outline: none;
+      border-bottom: 5px solid greenyellow;
+    }
   }
 }
 .form {
@@ -51,12 +49,25 @@
     font-size: 2rem;
     border-radius: 50px;
     padding: 2rem 1rem;
+    border: none;
+    &:focus {
+      outline: none;
+      border-bottom: 5px solid greenyellow;
+    }
   }
   &__btn--modal {
     padding: 1rem 2rem;
-    width: 30%;
+    width: 40%;
     margin: 0 auto;
     border: none;
     border-radius: 50px;
+    background-color: #93ffd8;
+    font-family: inherit;
+    font-size: 2rem;
+    transition: transform 0.2s;
+    &:hover {
+      transform: translateY(-10%);
+      box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.363);
+    }
   }
 }

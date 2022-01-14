@@ -1,6 +1,7 @@
 'use strict';
 const nav = document.querySelector('.nav');
 const taskBox = document.querySelectorAll('.task__box');
+const navBtn = document.querySelectorAll('.nav__btn-lit');
 nav.addEventListener('click', function (e) {
   if (
     e.target.classList.contains('nav__btn') ||
@@ -8,7 +9,9 @@ nav.addEventListener('click', function (e) {
   ) {
     const test = e.target.getAttribute('data-num');
     taskBox.forEach(s => s.classList.remove('active'));
+    navBtn.forEach(s => s.classList.remove('nav-btn--active'));
     taskBox[test].classList.add('active');
+    navBtn[test].classList.add('nav-btn--active');
   } else {
     return;
   }
@@ -41,33 +44,39 @@ class App {
     addBtn.addEventListener('click', this._newTask.bind(this));
     updateTask.addEventListener('click', this.deleteTask.bind(this));
     addBtnUpdate.addEventListener('click', this.editTask.bind(this));
-    console.log(this.#task);
   }
 
   renderTask(task) {
     let htmlforView = ` 
-    <li class="task" data-id="${task.id}>
-    <input type="checkbox" class="task__check">
+    <li class="task" data-id="${task.id}">
+    <div class="task__cont">
     <div class="task__details">
-    <span class="workout__value">${task.title}</span>  
+    <span class="task__name">${task.title}</span>  
     </div>
     <div class="task__details">
-          <span class="workout__icon">⏱</span>
-          <span class="workout__value">${task.dateTime}</span> 
+          <span class="task__icon">📅</span>
+          <span class="task__date">${task.dateTime}</span> 
+    </div>
     </div>
     </li>
     `;
-    const htmlForUpdate = `<li class="task taskd" data-id="${task.id}">
+    const htmlForUpdate = `
+    <li class="task taskd" data-id="${task.id}">
+    <div class="task__cont2">
     <div class="task__details">
-    <span class="workout__value">${task.title}</span>  
+    <span class="task__name">${task.title}</span>  
     </div>
     <div class="task__details">
-    <span class="workout__icon">⏱</span>
-    <span class="workout__value">${task.dateTime}</span> 
+    <span class="task__icon">📅</span>
+    <span class="task__date">${task.dateTime}</span> 
     </div>
-    <button class="task__update" data-id="${task.id}">Edit</button>
-    <button class="task__delete" data-id="${task.id}">Delete</button>
-    </li>`;
+    <div class="task__details">
+    <button class="task__update task__btn" data-id="${task.id}"><ion-icon name="create-outline" class="task__update" data-id="${task.id}"></ion-icon></button>
+    <button class="task__delete task__btn" data-id="${task.id}"><ion-icon name="trash-outline" class="task__delete" data-id="${task.id}"></ion-icon></button>
+    </div>
+    </div>
+    </li>
+    `;
     allTask.insertAdjacentHTML('beforeend', htmlforView);
     updateTask.insertAdjacentHTML('beforeend', htmlForUpdate);
   }
@@ -80,39 +89,40 @@ class App {
 
     let task;
     //Check if data is valid
-    // if (dist < 0 || dura < 0) {
-    //   resetValue();
-    //   return alert('Negative Distance or Duration is not allowed');
-    // } else if (dist == '' || dura == '') {
-    //   resetValue();
-    //   return alert('Empty Distance or Duration is not allowed');
-    // }
-
-    //Create object
-    task = new Task(id, title, dateTime);
-
-    //add new obj to wo array
-    this.#task.push(task);
-    //render Task
-    this.renderTask(task);
-    this.setLocalstorage();
-    this.resetValue();
+    if (title == '' || dateTime == '') {
+      this.resetValue1();
+      return alert('Please add all details');
+    } else {
+      //Create object
+      task = new Task(id, title, dateTime);
+      //add new obj to wo array
+      this.#task.push(task);
+      //render Task
+      this.renderTask(task);
+      this.setLocalstorage();
+      this.resetValue1();
+    }
   }
   editTask(e) {
     const idUpdated = Date.now();
-    //Update new value
     const title = InputTitleUpdate.value;
     const dateTime = InputDateTimeUpdate.value;
-    const task = this.#task.find(o => o.id == getBtnIDEdit);
-    task.title = title;
-    task.dateTime = dateTime;
-    task.id = idUpdated;
-    //render new data
-    this.setLocalstorage();
-    taskBoxUP.forEach(s => (s.innerHTML = ''));
-    this.getLocalstorage();
-    this.resetValue();
-    modal.classList.add('modal--hide');
+    if (title == '' || dateTime == '') {
+      this.resetValue2();
+      return alert('Please add all details');
+    } else {
+      //Update new value
+      const task = this.#task.find(o => o.id == getBtnIDEdit);
+      task.title = title;
+      task.dateTime = dateTime;
+      task.id = idUpdated;
+      //render new data
+      this.setLocalstorage();
+      taskBoxUP.forEach(s => (s.innerHTML = ''));
+      this.getLocalstorage();
+      this.resetValue2();
+      modal.classList.add('modal--hide');
+    }
   }
   deleteTask(e) {
     if (e.target.classList.contains('task__delete')) {
@@ -127,7 +137,7 @@ class App {
       getBtnIDEdit = e.target.getAttribute('data-id');
       let taskEdit;
       this.#task.forEach(i =>
-        i.id == getBtnIDEdit ? (taskEdit = i) : console.log('no')
+        i.id == getBtnIDEdit ? (taskEdit = i) : console.log()
       );
       InputTitleUpdate.value = taskEdit.title;
       InputDateTimeUpdate.value = taskEdit.dateTime;
@@ -135,12 +145,11 @@ class App {
       return;
     }
   }
-  resetValue() {
-    InputTitle.value =
-      InputDateTime.value =
-      InputTitleUpdate.value =
-      InputDateTimeUpdate.value =
-        '';
+  resetValue1() {
+    InputTitle.value = InputDateTime.value = '';
+  }
+  resetValue2() {
+    InputTitleUpdate.value = InputDateTimeUpdate.value = '';
   }
   setLocalstorage() {
     localStorage.setItem('tasks', JSON.stringify(this.#task));

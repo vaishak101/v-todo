@@ -8,12 +8,13 @@
   align-items: center;
   justify-content: center;
   &__edit-box {
-    background: chocolate;
+    background-color: #fffbdf;
     width: 80%;
     height: 60%;
     padding: 3rem 8rem;
     border-radius: 50px;
     position: relative;
+    border: 5px solid yellow;
   }
   &--hide {
     opacity: 0;

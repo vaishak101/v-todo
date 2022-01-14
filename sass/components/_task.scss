@@ -1,12 +1,45 @@
 .task {
-  background-color: cornsilk;
+  background-color: #93ffd8;
   border-radius: 50px;
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  &__check {
+  list-style: none;
+  // display: flex;
+  // justify-content: space-between;
+  gap: 3rem;
+  &__name {
+    font-size: 1.5rem;
+  }
+  &__icon {
+    font-size: 2rem;
+  }
+  &__date {
+    font-size: 1.2rem;
+  }
+  &__btn {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50px;
+    border: none;
+    &:hover {
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.486);
+    }
+  }
+  &__delete {
+    background-color: #ff1f5a;
+  }
+  &__update {
+    background-color: yellow;
+  }
+  &__cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__cont2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 }

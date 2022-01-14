@@ -6,9 +6,47 @@
   font-size: 3rem;
   text-align: center;
   padding: 1rem 0;
+  &--1 {
+    background-color: rgb(58, 255, 58);
+  }
+  &--2 {
+    background-color: rgb(129, 247, 255);
+  }
+  &--3 {
+    background-color: rgb(255, 58, 58);
+  }
+  &--4 {
+    background-color: rgb(48, 133, 245);
+  }
 }
 .modal__btn--close {
   position: absolute;
   top: 7%;
   right: 5%;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50px;
+  border: none;
+  background-color: #a9f1df;
+  &:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.486);
+  }
+}
+.form__btn {
+  padding: 1rem 2rem;
+  width: 40%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 50px;
+  background-color: #93ffd8;
+  font-family: inherit;
+  font-size: 2rem;
+  transition: transform 0.2s;
+  &:hover {
+    transform: translateY(-10%);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.363);
+  }
+}
+.nav-btn--active {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.452);
 }

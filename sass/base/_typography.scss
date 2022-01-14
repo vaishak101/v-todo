@@ -1,0 +1,23 @@
+.info--heading {
+  font-size: 5rem;
+  &-2 {
+    font-size: 3rem;
+  }
+  &-para {
+    font-size: 1.5rem;
+  }
+}
+.info--link {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: lightskyblue;
+    transition: all 0.2s ease;
+  }
+  &:hover,
+  &:active {
+    color: rgb(33, 167, 250);
+
+    text-decoration: underline;
+  }
+}

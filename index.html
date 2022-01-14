@@ -6,30 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <script async src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
     <title>V-Todo List</title>
   </head>
   <body>
     <!-- *******************************************************----NAVIGATION----*********************** -->
     <div class="nav">
-      <button class="nav__btn" data-num="0">
-        <ion-icon
-          name="add-circle-outline"
-          class="nav__btn--icon"
+      <div class="logo__cont">
+        <a href="#"><img src="img/V-studio.jpg" class="logo" alt="logo" /></a>
+      </div>
+      <div class="nav-a">
+        <button
+          class="nav__btn nav__btn-lit nav__btn--1 nav-btn--active"
           data-num="0"
-        ></ion-icon>
-      </button>
-      <button class="nav__btn" data-num="1">
+        >
+          <ion-icon
+            name="add-circle-outline"
+            class="nav__btn--icon"
+            data-num="0"
+          ></ion-icon>
+        </button>
+        <button class="nav__btn nav__btn-lit nav__btn--2" data-num="1">
+          <ion-icon
+            name="list-outline"
+            class="nav__btn--icon"
+            data-num="1"
+          ></ion-icon>
+        </button>
+        <button class="nav__btn nav__btn-lit nav__btn--3" data-num="2">
+          <ion-icon
+            name="create-outline"
+            class="nav__btn--icon"
+            data-num="2"
+          ></ion-icon>
+        </button>
+      </div>
+      <button class="nav__btn nav__btn-lit nav__btn--4" data-num="3">
         <ion-icon
-          name="list-outline"
+          name="information-circle-outline"
           class="nav__btn--icon"
-          data-num="1"
-        ></ion-icon>
-      </button>
-      <button class="nav__btn" data-num="2">
-        <ion-icon
-          name="create-outline"
-          class="nav__btn--icon"
-          data-num="2"
+          data-num="3"
         ></ion-icon>
       </button>
     </div>
@@ -69,6 +94,19 @@
         <div class="task__box task__box--edit">
           <h1 class="u-text-center u-margin-bottom-medium">Edit your tasks</h1>
           <div class="content content--Update content--up"></div>
+        </div>
+        <!-- ***************************************************----INFO--------*********************** -->
+        <div class="task__box task__box--info">
+          <h1 class="u-text-center u-margin-bottom-medium">Information</h1>
+          <div class="content content--info u-text-center">
+            <h1 class="info--heading">V-todo List</h1>
+            <h2 class="info--heading-2">
+              Built by <a href="#" class="info--link">Vaishak Nair</a>
+            </h2>
+            <p class="info--heading-para">
+              This Todo List uses local storage to store details of your task
+            </p>
+          </div>
         </div>
         <!-- ***************************************************----Modal--------*********************** -->
         <div class="modal modal--hide">
