@@ -9,6 +9,26 @@
 html {
   font-size: 62.5%;
 }
+@media (max-width: 75em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 56.25em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (max-width: 37.5em) {
+  html {
+    font-size: 50%;
+  }
+}
+@media (min-width: 112.5em) {
+  html {
+    font-size: 75%;
+  }
+}
 
 body {
   box-sizing: border-box;
@@ -188,6 +208,11 @@ body {
 .task__name {
   font-size: 1.5rem;
 }
+@media (max-width: 56.25em) {
+  .task__name {
+    font-size: 1.2rem;
+  }
+}
 .task__icon {
   font-size: 2rem;
 }
@@ -214,10 +239,28 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+@media (max-width: 56.25em) {
+  .task__cont {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
 .task__cont2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media (max-width: 56.25em) {
+  .task__cont2 {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+@media (max-width: 56.25em) {
+  .task {
+    padding: 2rem;
+    overflow-x: scroll;
+  }
 }
 
 .modal {
