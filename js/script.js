@@ -1,4 +1,6 @@
 'use strict';
+
+//Navigation
 const nav = document.querySelector('.nav');
 const taskBox = document.querySelectorAll('.task__box');
 const navBtn = document.querySelectorAll('.nav__btn-lit');
@@ -16,7 +18,7 @@ nav.addEventListener('click', function (e) {
     return;
   }
 });
-//ADD
+//TASK ADD DELETE EDIT
 const InputTitle = document.querySelector('.title');
 const InputDateTime = document.querySelector('.date');
 const addBtn = document.querySelector('.form__btn');
@@ -28,6 +30,7 @@ const updateTask = document.querySelector('.content--Update');
 const taskBoxUP = document.querySelectorAll('.content--up');
 const modal = document.querySelector('.modal');
 let getBtnIDEdit;
+
 class Task {
   constructor(id, title, dateTime) {
     this.id = id;
@@ -35,17 +38,14 @@ class Task {
     this.dateTime = dateTime;
   }
 }
-
 class App {
   #task = [];
-
   constructor() {
     this.getLocalstorage();
     addBtn.addEventListener('click', this._newTask.bind(this));
     updateTask.addEventListener('click', this.deleteTask.bind(this));
     addBtnUpdate.addEventListener('click', this.editTask.bind(this));
   }
-
   renderTask(task) {
     let htmlforView = ` 
     <li class="task" data-id="${task.id}">
@@ -95,7 +95,7 @@ class App {
     } else {
       //Create object
       task = new Task(id, title, dateTime);
-      //add new obj to wo array
+      //add new obj to task array
       this.#task.push(task);
       //render Task
       this.renderTask(task);
@@ -162,7 +162,6 @@ class App {
   }
 }
 const app = new App();
-
 //MODAL CLOSING
 const closeModal = document.querySelector('.modal__btn--close');
 closeModal.addEventListener('click', function () {
