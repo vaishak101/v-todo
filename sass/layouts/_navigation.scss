@@ -11,6 +11,8 @@
   justify-content: space-between;
   flex-direction: column;
   gap: 2rem;
+  transition: transform 0.3s ease;
+  z-index: 90000;
 }
 .nav-a {
   display: flex;
@@ -27,4 +29,25 @@
   width: 5.5rem;
   height: 5.5rem;
   border-radius: 50%;
+}
+.nav__slider {
+  // background-color: ;
+  border-radius: 50px;
+  color: black;
+  display: none;
+  font-size: 20px;
+  // height: 50px;
+  left: 90px;
+  position: absolute;
+  text-align: center;
+  top: 2%;
+  transition: left 0.3s ease;
+  width: 50px;
+  z-index: 90000;
+}
+.hide-nav {
+  transform: translateX(-100%);
+}
+.hide {
+  left: 2px;
 }

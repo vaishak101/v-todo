@@ -25,4 +25,9 @@
       @content;
     }
   }
+  @if $breakpoint == 640 {
+    @media (max-width: 640px) {
+      @content;
+    }
+  }
 }

@@ -1,6 +1,9 @@
 .display {
   height: 100vh;
   margin-left: 10rem;
+  @include respond(640) {
+    margin-left: 0;
+  }
 }
 .container {
   height: 100vh;
@@ -30,6 +33,9 @@
   }
   &--info {
     border: 5px solid rgb(48, 133, 245);
+  }
+  @include respond(640) {
+    padding: 3rem 1rem;
   }
 }
 .active {

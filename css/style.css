@@ -24,6 +24,11 @@ html {
     font-size: 50%;
   }
 }
+@media (max-width: 640px) {
+  html {
+    font-size: 42%;
+  }
+}
 @media (min-width: 112.5em) {
   html {
     font-size: 75%;
@@ -163,7 +168,9 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 100%;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 10px;
 }
 .form__label--modal {
   width: 30%;
@@ -276,11 +283,16 @@ body {
 .modal__edit-box {
   background-color: #fffbdf;
   width: 80%;
-  height: 80%;
   padding: 5rem 8rem;
   border-radius: 50px;
   position: relative;
   border: 5px solid yellow;
+}
+@media (max-width: 640px) {
+  .modal__edit-box {
+    width: 90%;
+    padding: 5rem 1rem;
+  }
 }
 .modal--hide {
   opacity: 0;
@@ -291,6 +303,11 @@ body {
 .display {
   height: 100vh;
   margin-left: 10rem;
+}
+@media (max-width: 640px) {
+  .display {
+    margin-left: 0;
+  }
 }
 
 .container {
@@ -322,6 +339,11 @@ body {
 .task__box--info {
   border: 5px solid #3085f5;
 }
+@media (max-width: 640px) {
+  .task__box {
+    padding: 3rem 1rem;
+  }
+}
 
 .active {
   height: 90%;
@@ -344,6 +366,8 @@ body {
   justify-content: space-between;
   flex-direction: column;
   gap: 2rem;
+  transition: transform 0.3s ease;
+  z-index: 90000;
 }
 
 .nav-a {
@@ -365,6 +389,28 @@ body {
   border-radius: 50%;
 }
 
+.nav__slider {
+  border-radius: 50px;
+  color: black;
+  display: none;
+  font-size: 20px;
+  left: 90px;
+  position: absolute;
+  text-align: center;
+  top: 2%;
+  transition: left 0.3s ease;
+  width: 50px;
+  z-index: 90000;
+}
+
+.hide-nav {
+  transform: translateX(-100%);
+}
+
+.hide {
+  left: 2px;
+}
+
 .content {
   height: 80%;
   overflow-y: scroll;
@@ -381,6 +427,12 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 640px) {
+  .content {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

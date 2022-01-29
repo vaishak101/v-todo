@@ -17,6 +17,9 @@ html {
   @include respond(phone) {
     font-size: 50%; ///1rem = 8px; 8px/16px = 50%
   }
+  @include respond(640) {
+    font-size: 42%;
+  }
   @include respond(big-desktop) {
     font-size: 75%; //1rem = 12px; 12px/16px=75%;
   }

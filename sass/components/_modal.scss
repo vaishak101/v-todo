@@ -10,11 +10,15 @@
   &__edit-box {
     background-color: #fffbdf;
     width: 80%;
-    height: 80%;
+    // height: 80%;
     padding: 5rem 8rem;
     border-radius: 50px;
     position: relative;
     border: 5px solid yellow;
+    @include respond(640) {
+      width: 90%;
+      padding: 5rem 1rem;
+    }
   }
   &--hide {
     opacity: 0;

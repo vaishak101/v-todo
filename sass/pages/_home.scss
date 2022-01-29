@@ -13,4 +13,8 @@
     align-items: center;
     justify-content: center;
   }
+  @include respond(640) {
+    width: 100%;
+    padding: 0.5rem 0;
+  }
 }

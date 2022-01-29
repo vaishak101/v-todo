@@ -1,7 +1,13 @@
 'use strict';
-
-//Navigation
+const mediaQuery = window.matchMedia('(max-width: 640px)');
 const nav = document.querySelector('.nav');
+
+const menuIcon =
+  '<ion-icon name="chevron-forward-circle-outline" class="ion"></ion-icon>';
+const closeIcon = '<ion-icon name="chevron-back-circle-outline"></ion-icon>';
+const navMob = document.querySelector('.nav__slider');
+createNavMob();
+//Navigation
 const taskBox = document.querySelectorAll('.task__box');
 const navBtn = document.querySelectorAll('.nav__btn-lit');
 nav.addEventListener('click', function (e) {
@@ -14,10 +20,38 @@ nav.addEventListener('click', function (e) {
     navBtn.forEach(s => s.classList.remove('nav-btn--active'));
     taskBox[test].classList.add('active');
     navBtn[test].classList.add('nav-btn--active');
+    if (mediaQuery.matches) {
+      toggle();
+    }
   } else {
     return;
   }
 });
+//RESPONSIVENESS
+
+navMob.addEventListener('click', function () {
+  toggle();
+});
+function toggle() {
+  console.log('test');
+  nav.classList.toggle('hide-nav');
+  navMob.classList.toggle('hide');
+  navMob.classList.contains('hide')
+    ? (navMob.innerHTML = menuIcon)
+    : (navMob.innerHTML = closeIcon);
+}
+function createNavMob() {
+  if (mediaQuery.matches) {
+    nav.classList.add('hide-nav');
+    navMob.classList.add('hide');
+    navMob.innerHTML = menuIcon;
+    navMob.style.display = 'inline-block';
+  } else {
+    nav.classList.remove('hide-nav');
+    navMob.style.display = 'none';
+  }
+}
+
 //TASK ADD DELETE EDIT
 const InputTitle = document.querySelector('.title');
 const InputDateTime = document.querySelector('.date');
@@ -166,4 +200,8 @@ const app = new App();
 const closeModal = document.querySelector('.modal__btn--close');
 closeModal.addEventListener('click', function () {
   modal.classList.add('modal--hide');
+});
+//RESIZE
+window.addEventListener('resize', function () {
+  createNavMob();
 });
